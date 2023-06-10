@@ -58,6 +58,7 @@ struct ObjectDetailView: View {
                                     .background(
                                         RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color.lightNavy)
                                     )
+
                             }
                         }
                         
