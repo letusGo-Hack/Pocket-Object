@@ -66,11 +66,17 @@ struct ResultView: View {
                     }
                     .padding()
                 } else {
-                    VStack {
-                        Text("reconstructionFinished")
-                        NavigationLink("상세뷰 진입") {
-                            Viewer3D(fileName: fileName)
+                    NavigationLink(destination: Viewer3D(fileName: fileName)) {
+                        HStack {
+                            Image(systemName: "arrow.right.circle.fill")
+                                .foregroundColor(.blue)
+                            Text("Go to Detail View")
+                                .font(.headline)
+                                .foregroundColor(.blue)
                         }
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
                     }
                     .padding()
                 }

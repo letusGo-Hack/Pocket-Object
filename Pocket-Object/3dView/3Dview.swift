@@ -35,4 +35,5 @@ struct Viewer3D: View {
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
             }
         }
-    }}
+    }
+}
