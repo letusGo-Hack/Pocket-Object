@@ -2,7 +2,7 @@
 
 - 이름: Uma Kim
 - 이름: Eden
-- 이름: 보니
+- 이름: Boni
 - 이름: Gluten
 
 프로젝트 소개
