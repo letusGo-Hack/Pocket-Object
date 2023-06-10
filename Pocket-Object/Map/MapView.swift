@@ -37,6 +37,9 @@ struct MapView: View {
       
       UserAnnotation()
     }
+    .onAppear {
+        isBottomSheetShow.toggle()
+    }
     .overlay(alignment: .bottomTrailing) {
       VStack {
         MapCompass(scope: mapScope)
@@ -48,7 +51,7 @@ struct MapView: View {
     }
     .mapScope(mapScope)
     .onChange(of: selectedMarker) {
-        isBottomSheetShow.toggle()
+        // 선택된 위치로 소팅
     }
     .onChange(of: selectedTag) { tag in
 
