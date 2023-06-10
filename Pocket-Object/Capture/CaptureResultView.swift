@@ -61,6 +61,7 @@ struct CaptureResultView: View {
                                 ProgressView(value: reconstructionProgress)
                                     .progressViewStyle(.automatic)
                                 Text("\(reconstructionProgress)")
+                                Text(errorMessage)
                             }
                         }
                     }
