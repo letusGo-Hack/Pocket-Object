@@ -51,6 +51,8 @@ struct MapView: View {
         MapCompass(scope: mapScope)
         MapPitchButton(scope: mapScope)
         MapUserLocationButton(scope: mapScope)
+              .padding(.bottom, 320)
+              .padding(.trailing, 20)
       }
       .buttonBorderShape(.circle)
       .padding()

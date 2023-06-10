@@ -43,11 +43,12 @@ class LocationDataManager : NSObject, ObservableObject, CLLocationManagerDelegat
     }
   }
   
-  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    guard let location = locations.last else { return }
-    print(location)
-//            lastLocation = location
-  }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        
+        // 현재 위치 정보 업데이트
+        currentLocation = location.coordinate
+    }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     print("error: \(error.localizedDescription)")
