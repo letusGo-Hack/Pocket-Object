@@ -10,6 +10,10 @@ import MapKit
 import SwiftData
 
 struct MapView: View {
+    @Query(sort: \.title, order: .forward, animation: .default) var allContent: [Content]
+    @State private var filteredContent: [Content] = []
+    
+//    @ObservedObject var bottomSheetViewModel = BottomSheetViewModel()
   @StateObject var locationDataManager = LocationDataManager()
   @Namespace private var mapScope
   
@@ -51,7 +55,13 @@ struct MapView: View {
     }
     .mapScope(mapScope)
     .onChange(of: selectedMarker) {
-        // 선택된 위치로 소팅
+        guard let selectedID = selectedMarker?.id else { return }
+        
+        let fetchDescriptor = FetchDescriptor<Content>(predicate: #Predicate { $0.id == selectedID })
+        
+        let result = try? context.fetch(fetchDescriptor)
+        guard let result = result else { return }
+        self.filteredContent = result
     }
     .onChange(of: selectedTag) { tag in
 
@@ -64,7 +74,7 @@ struct MapView: View {
       
     }
     .sheet(isPresented: $isBottomSheetShow, content: {
-        BottomSheetView()
+        BottomSheetView(contents: self.allContent)
             .presentationDetents([.height(300)])
             .presentationBackgroundInteraction(.enabled(upThrough: .height(300)))
             .interactiveDismissDisabled(true)
@@ -92,7 +102,7 @@ struct MapView: View {
       
       
       
-      let newMaker = Content(imageUrl: "", date: Date.init(), title: "aaa", content: "bbb", lat: "37.51165285847918", log: "127.05760549475231", bookmark: true)
+//      let newMaker = Content(imageUrl: "", date: Date.init(), title: "aaa", content: "bbb", lat: "37.51165285847918", log: "127.05760549475231", bookmark: true)
       
 //      selectedTag = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(newMaker.lat) ?? 0.0, longitude: Double(newMaker.log) ?? 0.0)))
 //      context.insert(newMaker)
