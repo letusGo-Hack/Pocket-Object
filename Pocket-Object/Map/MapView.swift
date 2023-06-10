@@ -23,6 +23,8 @@ struct MapView: View {
   
   @State private var showMarkerInfo: Bool = false
   
+    @State private var isBottomSheetShow: Bool = false
+    
   var body: some View {
     Map(position: $position, selection: $selectedTag, scope: mapScope) {
       
@@ -46,7 +48,7 @@ struct MapView: View {
     }
     .mapScope(mapScope)
     .onChange(of: selectedMarker) {
-      print("onChanged")
+        isBottomSheetShow.toggle()
     }
     .onChange(of: selectedTag) { tag in
 
@@ -58,6 +60,14 @@ struct MapView: View {
 //      showMarkerInfo = true
       
     }
+    .sheet(isPresented: $isBottomSheetShow, content: {
+        BottomSheetView()
+            .presentationDetents([.height(300)])
+            .presentationBackgroundInteraction(.enabled(upThrough: .height(300)))
+            .interactiveDismissDisabled(true)
+    })
+
+      
     .sheet(isPresented: $showMarkerInfo, onDismiss: {
       withAnimation(.snappy) {
 //        if let boudingRect = route?.polyline.boundingMapRect, routeDisplaying {
