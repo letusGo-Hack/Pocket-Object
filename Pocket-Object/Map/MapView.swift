@@ -79,7 +79,7 @@ struct MapView: View {
       
       
       
-      let newMaker = Content(id: "1", imageUrl: "", date: Date.init(), title: "aaa", content: "bbb", lat: "37.51165285847918", log: "127.05760549475231", bookmark: true)
+      let newMaker = Content(imageUrl: "", date: Date.init(), title: "aaa", content: "bbb", lat: "37.51165285847918", log: "127.05760549475231", bookmark: true)
       
 //      selectedTag = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(newMaker.lat) ?? 0.0, longitude: Double(newMaker.log) ?? 0.0)))
 //      context.insert(newMaker)

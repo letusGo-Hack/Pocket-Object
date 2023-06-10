@@ -13,9 +13,8 @@ struct Pocket_ObjectApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .modelContainer(for: [Content.self])
+            MapView()
         }
-        .modelContainer(for: Item.self)
+        .modelContainer(for: Content.self)
     }
 }
