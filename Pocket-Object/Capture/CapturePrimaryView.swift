@@ -29,35 +29,44 @@ struct CapturePrimaryView: View {
                     
                 case .ready:
                     VStack {
-                        Text("Ready")
                         Spacer()
                         Button {
                             session.startDetecting()
                         } label: {
                             Text("Start Detecting")
+                                .foregroundColor(.white)
                         }
+                        .padding()
+                        .background(.darkNavy)
+                        .clipShape(Capsule())
                     }
                     
                 case .detecting:
                     VStack {
-                        Text("Detecting")
                         Spacer()
                         Button {
                             session.startCapturing()
                         } label: {
                             Text("Start Capturing")
+                                .foregroundColor(.white)
                         }
+                        .padding()
+                        .background(.darkNavy)
+                        .clipShape(Capsule())
                     }
                     
                 case .capturing:
                     VStack {
-                        Text("capture")
                         Spacer()
                         Button {
                             session.requestImageCapture()
                         } label: {
                             Text("requestImageCapture")
+                                .foregroundColor(.white)
                         }
+                        .padding()
+                        .background(.darkNavy)
+                        .clipShape(Capsule())
                     }
                 case .finishing:
                     Text("Finishing")
