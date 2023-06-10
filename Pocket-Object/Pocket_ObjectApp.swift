@@ -13,7 +13,7 @@ struct Pocket_ObjectApp: App {
     
     var body: some Scene {
         WindowGroup {
-            BottomSheetView()
+            TestContentView()
                 .modelContainer(for: [Content.self])
         }
         .modelContainer(for: Item.self)
