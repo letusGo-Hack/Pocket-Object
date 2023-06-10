@@ -15,13 +15,13 @@ struct CapturePrimaryView: View {
     @State var fileName: String = ""
     var onDismiss: () -> Void
     @State var shouldShowProgressView = false
-    @State var mockCompleteScanPass = true
+    @State var mockCompleteScanPass = falseÎÎ
     @State var reconstructionFinished = false
     
     var body: some View {
         if session.userCompletedScanPass || mockCompleteScanPass {
             VStack {
-//                ObjectCapturePointCloudView(session: session)
+                ObjectCapturePointCloudView(session: session)
                 
                 Spacer()
                 
@@ -29,6 +29,8 @@ struct CapturePrimaryView: View {
                     TextField(text: $fileName, label: {
                         Text("저장할 파일 이름을 입력해주세요.")
                     })
+                    .border(.black, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                    .frame(width: 300, height: 200)
                     
                     Button {
                         if !fileName.isEmpty {
@@ -37,9 +39,10 @@ struct CapturePrimaryView: View {
                         }
                     } label: {
                         Text("reconstruction")
+                            .border(.black, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                            .frame(width: 300, height: 200)
+                            .foregroundColor(.blue)
                     }
-                    .frame(height: 200)
-                    .foregroundColor(.blue)
                 }
                 .padding()
             }
