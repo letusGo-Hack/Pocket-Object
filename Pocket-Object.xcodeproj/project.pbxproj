@@ -292,7 +292,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pocket-Object/Preview Content\"";
-				DEVELOPMENT_TEAM = PHT5ZHW738;
+				DEVELOPMENT_TEAM = N7B3VPVQX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"let me use your damn camera\"";
@@ -322,7 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pocket-Object/Preview Content\"";
-				DEVELOPMENT_TEAM = PHT5ZHW738;
+				DEVELOPMENT_TEAM = N7B3VPVQX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"let me use your damn camera\"";
