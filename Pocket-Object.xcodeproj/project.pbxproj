@@ -22,11 +22,14 @@
 		3622210F2A34117200AFEEE3 /* DummyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3622210E2A34117200AFEEE3 /* DummyListViewModel.swift */; };
 		362221112A3415AC00AFEEE3 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362221102A3415AC00AFEEE3 /* ListItemView.swift */; };
 		362221172A34300000AFEEE3 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362221162A34300000AFEEE3 /* Content.swift */; };
+<<<<<<< HEAD
 >>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 =======
 		2CAF00CC2A341CB700823EE6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00CB2A341CB700823EE6 /* LocationManager.swift */; };
 		2CAF00CE2A341CD400823EE6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00CD2A341CD400823EE6 /* MapView.swift */; };
 >>>>>>> parent of de8e1ab (Merge pull request #2 from letusGo-Hack/gluten-list)
+=======
+>>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,11 +49,14 @@
 		3622210E2A34117200AFEEE3 /* DummyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyListViewModel.swift; sourceTree = "<group>"; };
 		362221102A3415AC00AFEEE3 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		362221162A34300000AFEEE3 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 >>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 =======
 		2CAF00CB2A341CB700823EE6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2CAF00CD2A341CD400823EE6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 >>>>>>> parent of de8e1ab (Merge pull request #2 from letusGo-Hack/gluten-list)
+=======
+>>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,9 +152,12 @@
 				362221162A34300000AFEEE3 /* Content.swift */,
 			);
 			path = Model;
+<<<<<<< HEAD
 >>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 =======
 >>>>>>> parent of de8e1ab (Merge pull request #2 from letusGo-Hack/gluten-list)
+=======
+>>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,10 +239,13 @@
 				3622210F2A34117200AFEEE3 /* DummyListViewModel.swift in Sources */,
 				362221172A34300000AFEEE3 /* Content.swift in Sources */,
 				3622210B2A34106300AFEEE3 /* TestListContentView.swift in Sources */,
+<<<<<<< HEAD
 >>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 =======
 				2CAF00CC2A341CB700823EE6 /* LocationManager.swift in Sources */,
 >>>>>>> parent of de8e1ab (Merge pull request #2 from letusGo-Hack/gluten-list)
+=======
+>>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 				2CAF009B2A340E0B00823EE6 /* ContentView.swift in Sources */,
 				2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */,
 				2CAF00992A340E0B00823EE6 /* Pocket_ObjectApp.swift in Sources */,
@@ -380,10 +392,13 @@
 				INFOPLIST_FILE = "Pocket-Object/Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치 권한";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 권한 2";
+<<<<<<< HEAD
 >>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 =======
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = plz;
 >>>>>>> parent of de8e1ab (Merge pull request #2 from letusGo-Hack/gluten-list)
+=======
+>>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -420,10 +435,13 @@
 				INFOPLIST_FILE = "Pocket-Object/Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치 권한";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 권한 2";
+<<<<<<< HEAD
 >>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 =======
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = plz;
 >>>>>>> parent of de8e1ab (Merge pull request #2 from letusGo-Hack/gluten-list)
+=======
+>>>>>>> parent of cccf0fa (Merge branch 'main' into gluten-list)
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
