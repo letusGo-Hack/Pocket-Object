@@ -1,5 +1,5 @@
 //
-//  ResultView.swift
+//  CaptureResultView.swift
 //  Pocket-Object
 //
 //  Created by eden on 2023/06/10.
@@ -9,27 +9,24 @@ import SwiftUI
 import RealityKit
 import OSLog
 
-struct ResultView: View {
+struct CaptureResultView: View {
     @StateObject var session: ObjectCaptureSession
     var onDismiss: () -> Void
-    let uuidString = UUID().uuidString
+    let uuidString: String
     @State var fileName: String = ""
-    @State var shouldShowProgressView = false
-    @State var reconstructionFinished = true
+    var savedFileName: String {
+        return "\(uuidString)/\(fileName)"
+    }
+    @State var shouldShowProgressView: Bool = false
+    @State var reconstructionFinished: Bool = false
+    @State var reconstructionProgress: Double = 0.0
+    @State var errorMessage: String = ""
     
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
-                //            ObjectCapturePointCloudView(session: session)
-                //                .frame(maxHeight: .infinity)
-                VStack {
-                    Spacer()
-                    Text("TmpText")
-                    Spacer()
-                    
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.yellow)
+                ObjectCapturePointCloudView(session: session)
+                    .frame(maxHeight: .infinity)
                 
                 if !reconstructionFinished {
                     ZStack {
@@ -44,8 +41,7 @@ struct ResultView: View {
                             
                             
                             Button {
-                                if !fileName.isEmpty {
-                                    //TODO: 파일 존재 여부 검증
+                                if !fileName.isEmpty, !isFileExist() {
                                     shouldShowProgressView = true
                                     reconstruction()
                                 }
@@ -61,12 +57,16 @@ struct ResultView: View {
                         }
                         .frame(maxWidth: .infinity)
                         if shouldShowProgressView {
-                            ProgressView()
+                            VStack {
+                                ProgressView(value: reconstructionProgress)
+                                    .progressViewStyle(.automatic)
+                                Text("\(reconstructionProgress)")
+                            }
                         }
                     }
                     .padding()
                 } else {
-                    NavigationLink(destination: Viewer3D(fileName: fileName)) {
+                    NavigationLink(destination: ReconstructionResultView(url: DirectoryManager.getDocumentsDirectory().appendingPathComponent("\(savedFileName).usdz"))) {
                         HStack {
                             Image(systemName: "arrow.right.circle.fill")
                                 .foregroundColor(.blue)
@@ -88,6 +88,11 @@ struct ResultView: View {
         })
     }
     
+    func isFileExist() -> Bool {
+        let url = DirectoryManager.getDocumentsDirectory().appendingPathComponent("\(savedFileName).usdz")
+        return FileManager.default.fileExists(atPath: url.absoluteString)
+    }
+    
     func reconstruction() {
         var configuration = PhotogrammetrySession.Configuration()
         configuration.checkpointDirectory = DirectoryManager.getDocumentsDirectory().appendingPathComponent("Snapshots/\(uuidString)")
@@ -96,9 +101,11 @@ struct ResultView: View {
         do {
             session = try PhotogrammetrySession(input: url, configuration: configuration)
             try session.process(requests: [
-                PhotogrammetrySession.Request.modelFile(url: DirectoryManager.getDocumentsDirectory().appendingPathComponent("\(fileName).usdz"))
+                PhotogrammetrySession.Request.modelFile(url: DirectoryManager.getDocumentsDirectory().appendingPathComponent("\(savedFileName).usdz"))
             ])
         } catch {
+            errorMessage = error.localizedDescription
+            os_log("[log] processFail: \(error.localizedDescription)")
             return
         }
         Task {
@@ -106,33 +113,34 @@ struct ResultView: View {
                 for try await output in session.outputs {
                     switch output {
                     case .processingComplete:
-                        os_log(.debug, "[log]: RealityKit has processed all requests.")
+                        os_log("[log]: RealityKit has processed all requests.")
                     case .requestError(let request, let error):
-                        os_log(.debug, "[log]: Request encountered an error.")
+                        os_log("[log]: Request encountered an error.")
                     case .requestComplete(let request, let result):
                         reconstructionFinished = true
                         shouldShowProgressView = false
-                        os_log(.debug, "[log]: RealityKit has finished processing a request.")
+                        os_log("[log]: RealityKit has finished processing a request.")
                     case .requestProgress(let request, let fractionComplete):
-                        os_log(.debug, "[log]: Periodic progress update \(fractionComplete). Update UI here.")
+                        reconstructionProgress = fractionComplete
+                        os_log("[log]: Periodic progress update \(fractionComplete). Update UI here.")
                     case .requestProgressInfo(let request, let progressInfo):
-                        os_log(.debug, "[log]: Periodic progress info update.")
+                        os_log("[log]: Periodic progress info update.")
                     case .inputComplete:
-                        os_log(.debug, "[log]: Ingestion of images is complete and processing begins.")
+                        os_log("[log]: Ingestion of images is complete and processing begins.")
                     case .invalidSample(let id, let reason):
-                        os_log(.debug, "[log]: RealityKit deemed a sample invalid and didn't use it.")
+                        os_log("[log]: RealityKit deemed a sample invalid and didn't use it.")
                     case .skippedSample(let id):
-                        os_log(.debug, "[log]: RealityKit was unable to use a provided sample.")
+                        os_log("[log]: RealityKit was unable to use a provided sample.")
                     case .automaticDownsampling:
-                        os_log(.debug, "[log]: RealityKit downsampled the input images because of resource constraints.")
+                        os_log("[log]: RealityKit downsampled the input images because of resource constraints.")
                     case .processingCancelled:
-                        os_log(.debug, "[log]: Processing was canceled.")
+                        os_log("[log]: Processing was canceled.")
                     @unknown default:
-                        os_log(.debug, "[log]: Unrecognized output.")
+                        os_log("[log]: Unrecognized output.")
                     }
                 }
             } catch {
-                os_log(.debug, "Output: ERROR = \(String(describing: error))")
+                os_log("Output: ERROR = \(String(describing: error))")
                 // Handle error.
             }
         }

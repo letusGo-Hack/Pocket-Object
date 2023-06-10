@@ -14,11 +14,11 @@ struct CapturePrimaryView: View {
     let uuidString = UUID().uuidString
     var onDismiss: () -> Void
     
-    @State var mockCompleteScanPass = true
+    @State var mockCompleteScanPass = false
     
     var body: some View {
         if session.userCompletedScanPass || mockCompleteScanPass {
-            ResultView(session: session, onDismiss: onDismiss)
+            CaptureResultView(session: session, onDismiss: onDismiss, uuidString: uuidString)
         }
         else {
             ZStack {

@@ -21,8 +21,10 @@
 		36A3A6602A343935005B4B00 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A65F2A343935005B4B00 /* BottomSheetView.swift */; };
 		36A3A6622A3439D9005B4B00 /* BottomSheetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A6612A3439D9005B4B00 /* BottomSheetItem.swift */; };
 		36A3A6672A343A4D005B4B00 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A6662A343A4D005B4B00 /* BottomSheetViewModel.swift */; };
-		550D5E692A34707D00D16C90 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D5E682A34707D00D16C90 /* ResultView.swift */; };
+		550D5E692A34707D00D16C90 /* CaptureResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D5E682A34707D00D16C90 /* CaptureResultView.swift */; };
 		550D5E6B2A3470D700D16C90 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D5E6A2A3470D700D16C90 /* DirectoryManager.swift */; };
+		550D5E6E2A34713B00D16C90 /* ReconstructionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D5E6D2A34713B00D16C90 /* ReconstructionResultView.swift */; };
+		550D5E712A347C6500D16C90 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D5E702A347C6500D16C90 /* Date+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +43,10 @@
 		36A3A65F2A343935005B4B00 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		36A3A6612A3439D9005B4B00 /* BottomSheetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetItem.swift; sourceTree = "<group>"; };
 		36A3A6662A343A4D005B4B00 /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
-		550D5E682A34707D00D16C90 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		550D5E682A34707D00D16C90 /* CaptureResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureResultView.swift; sourceTree = "<group>"; };
 		550D5E6A2A3470D700D16C90 /* DirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryManager.swift; sourceTree = "<group>"; };
+		550D5E6D2A34713B00D16C90 /* ReconstructionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconstructionResultView.swift; sourceTree = "<group>"; };
+		550D5E702A347C6500D16C90 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		2CAF00972A340E0B00823EE6 /* Pocket-Object */ = {
 			isa = PBXGroup;
 			children = (
+				550D5E6F2A347C5D00D16C90 /* Extension */,
 				2CAF009A2A340E0B00823EE6 /* ContentView.swift */,
 				2CAF00A12A340E0D00823EE6 /* Item.swift */,
 				3518F8B02A343CFA007C4178 /* ObjectDetailView.swift */,
@@ -145,26 +150,27 @@
 			isa = PBXGroup;
 			children = (
 				3518F8B42A343FAD007C4178 /* CapturePrimaryView.swift */,
+				550D5E682A34707D00D16C90 /* CaptureResultView.swift */,
 				550D5E672A34700500D16C90 /* Result */,
-				550D5E662A346FFC00D16C90 /* Reconstruction */,
 				550D5E6A2A3470D700D16C90 /* DirectoryManager.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
 		};
-		550D5E662A346FFC00D16C90 /* Reconstruction */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Reconstruction;
-			sourceTree = "<group>";
-		};
 		550D5E672A34700500D16C90 /* Result */ = {
 			isa = PBXGroup;
 			children = (
-				550D5E682A34707D00D16C90 /* ResultView.swift */,
+				550D5E6D2A34713B00D16C90 /* ReconstructionResultView.swift */,
 			);
 			path = Result;
+			sourceTree = "<group>";
+		};
+		550D5E6F2A347C5D00D16C90 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				550D5E702A347C6500D16C90 /* Date+String.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,12 +245,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAF00CC2A341CB700823EE6 /* LocationManager.swift in Sources */,
+				550D5E6E2A34713B00D16C90 /* ReconstructionResultView.swift in Sources */,
 				550D5E6B2A3470D700D16C90 /* DirectoryManager.swift in Sources */,
 				36A3A6672A343A4D005B4B00 /* BottomSheetViewModel.swift in Sources */,
 				2CAF009B2A340E0B00823EE6 /* ContentView.swift in Sources */,
 				3518F8B52A343FAD007C4178 /* CapturePrimaryView.swift in Sources */,
 				3518F8B12A343CFA007C4178 /* ObjectDetailView.swift in Sources */,
-				550D5E692A34707D00D16C90 /* ResultView.swift in Sources */,
+				550D5E692A34707D00D16C90 /* CaptureResultView.swift in Sources */,
+				550D5E712A347C6500D16C90 /* Date+String.swift in Sources */,
 				2CAF00CE2A341CD400823EE6 /* MapView.swift in Sources */,
 				2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */,
 				36A3A6602A343935005B4B00 /* BottomSheetView.swift in Sources */,
@@ -387,6 +395,7 @@
 				DEVELOPMENT_TEAM = N7B3VPVQX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "use camera for object capture";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = plz;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -417,6 +426,7 @@
 				DEVELOPMENT_TEAM = N7B3VPVQX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "use camera for object capture";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = plz;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
