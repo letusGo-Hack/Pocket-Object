@@ -41,7 +41,22 @@ struct ContentView: View {
             Text("Select an item")
         }
         .sheet(isPresented: $presentSheet) {
-            ObjectDetailView()
+//            if let url = URL(string: "") {
+            ObjectDetailView(
+//                content:
+//                    .init(
+//                        imageUrl: "",
+//                        date: Date(),
+//                        title: "",
+//                        content: "",
+//                        lat: "",
+//                        log: "",
+//                        bookmark: false
+//                    )
+            )
+//            } else {
+//                EmptyView()
+//            }
         }
         .sheet(isPresented: $presentCaptureView) {
             CapturePrimaryView {

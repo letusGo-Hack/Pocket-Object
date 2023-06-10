@@ -12,9 +12,13 @@ import SwiftData
 struct Pocket_ObjectApp: App {
     
     var body: some Scene {
+//        WindowGroup {
+//            MapView()
+//        }
+//        .modelContainer(for: Content.self)
+        
         WindowGroup {
-            MapView()
+            ContentView()
         }
-        .modelContainer(for: Content.self)
     }
 }
