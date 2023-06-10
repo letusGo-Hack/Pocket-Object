@@ -46,13 +46,10 @@ struct CaptureResultView: View {
                                     reconstruction()
                                 }
                             } label: {
-                                Text("reconstruction")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color.blue)
-                                    .cornerRadius(8)
+                                Text("reconstruction").foregroundColor(.white)
                             }
+                            .background(.darkNavy)
+                            .clipShape(Capsule())
                             .padding(.horizontal)
                         }
                         .frame(maxWidth: .infinity)
