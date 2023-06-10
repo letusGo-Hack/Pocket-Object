@@ -41,7 +41,7 @@ struct ContentView: View {
             Text("Select an item")
         }
         .sheet(isPresented: $presentSheet) {
-            ObjectDetailView()
+            ObjectDetailView(usdzURL: URL(string: "")!)
         }
         .sheet(isPresented: $presentCaptureView) {
             CapturePrimaryView {

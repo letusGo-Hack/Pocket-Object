@@ -5,26 +5,23 @@
 //
 //  Created by 김윤석 on 2023/06/10.
 //
-import GeoTrackKit
 import RealityKit
 import SwiftUI
+import OSLog
 
 struct CapturePrimaryView: View {
     @StateObject var session = ObjectCaptureSession()
+    let uuidString = UUID().uuidString
     var onDismiss: () -> Void
     
+    @State var mockCompleteScanPass = true
+    
     var body: some View {
-        ZStack {
-            
-            if session.userCompletedScanPass {
-                ObjectCapturePointCloudView(session: session)
-                Button {
-                    session.finish()
-                } label: {
-                    Text("Finish")
-                }
-                
-            } else {
+        if session.userCompletedScanPass || mockCompleteScanPass {
+            ResultView(session: session, onDismiss: onDismiss)
+        }
+        else {
+            ZStack {
                 ObjectCaptureView(session: session)
                 switch session.state {
                 case .initializing:
@@ -44,6 +41,7 @@ struct CapturePrimaryView: View {
                 case .detecting:
                     VStack {
                         Text("Detecting")
+                        Spacer()
                         Button {
                             session.startCapturing()
                         } label: {
@@ -52,8 +50,15 @@ struct CapturePrimaryView: View {
                     }
                     
                 case .capturing:
-                    Text("capture")
-                    
+                    VStack {
+                        Text("capture")
+                        Spacer()
+                        Button {
+                            session.requestImageCapture()
+                        } label: {
+                            Text("requestImageCapture")
+                        }
+                    }
                 case .finishing:
                     Text("Finishing")
                     
@@ -68,22 +73,13 @@ struct CapturePrimaryView: View {
                     Text("unknown default")
                 }
             }
+            .onAppear(perform: {
+                var configuration = ObjectCaptureSession.Configuration()
+                configuration.checkpointDirectory = DirectoryManager.getDocumentsDirectory().appendingPathComponent("Snapshots/\(uuidString)")
+                configuration.isOverCaptureEnabled = true
+                let url: URL = DirectoryManager.getDocumentsDirectory().appendingPathComponent("Images/\(uuidString)")
+                session.start(imagesDirectory: url, configuration: configuration)
+            })
         }
-        .onAppear(perform: {
-            var configuration = ObjectCaptureSession.Configuration()
-            configuration.checkpointDirectory = getDocumentsDirectory().appendingPathComponent("Snapshots/\(UUID().uuidString)")
-            configuration.isOverCaptureEnabled = true
-            let url: URL = getDocumentsDirectory().appendingPathComponent("Images/\(UUID().uuidString)")
-            print(url.absoluteString)
-            session.start(imagesDirectory: url, configuration: configuration)
-        })
-        .onDisappear(perform: {
-            onDismiss()
-        })
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
     }
 }
