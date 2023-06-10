@@ -121,6 +121,7 @@ struct CapturePrimaryView: View {
                 case .detecting:
                     VStack {
                         Text("Detecting")
+                        Spacer()
                         Button {
                             session.startCapturing()
                         } label: {
@@ -131,6 +132,7 @@ struct CapturePrimaryView: View {
                 case .capturing:
                     VStack {
                         Text("capture")
+                        Spacer()
                         Button {
                             session.requestImageCapture()
                         } label: {
@@ -171,7 +173,6 @@ struct CapturePrimaryView: View {
                 session.start(imagesDirectory: url, configuration: configuration)
             })
         }
-        
     }
     
 }
