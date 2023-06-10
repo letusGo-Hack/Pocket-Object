@@ -36,14 +36,20 @@ struct ContentView: View {
             }
             Text("Select an item")
         }
+        .sheet(isPresented: $presentSheet) {
+            ObjectDetailView()
+        }
     }
 
     private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
+//        withAnimation {
+//            let newItem = Item(timestamp: Date())
+//            modelContext.insert(newItem)
+//        }
+        presentSheet = true
     }
+    
+    @State var presentSheet: Bool = false
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {

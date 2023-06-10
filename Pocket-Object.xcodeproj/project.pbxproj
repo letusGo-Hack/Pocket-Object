@@ -14,6 +14,8 @@
 		2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00A12A340E0D00823EE6 /* Item.swift */; };
 		2CAF00CC2A341CB700823EE6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00CB2A341CB700823EE6 /* LocationManager.swift */; };
 		2CAF00CE2A341CD400823EE6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00CD2A341CD400823EE6 /* MapView.swift */; };
+		3518F8B12A343CFA007C4178 /* ObjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518F8B02A343CFA007C4178 /* ObjectDetailView.swift */; };
+		3518F8B32A343E60007C4178 /* pie_lemon_meringue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3518F8B22A343E60007C4178 /* pie_lemon_meringue.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		2CAF00A12A340E0D00823EE6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2CAF00CB2A341CB700823EE6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2CAF00CD2A341CD400823EE6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		3518F8B02A343CFA007C4178 /* ObjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailView.swift; sourceTree = "<group>"; };
+		3518F8B22A343E60007C4178 /* pie_lemon_meringue.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pie_lemon_meringue.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 			children = (
 				2CAF00982A340E0B00823EE6 /* Pocket_ObjectApp.swift */,
 				2CAF009A2A340E0B00823EE6 /* ContentView.swift */,
+				3518F8B02A343CFA007C4178 /* ObjectDetailView.swift */,
+				3518F8B22A343E60007C4178 /* pie_lemon_meringue.usdz */,
 				2CAF00CA2A341CAE00823EE6 /* Map */,
 				2CAF009C2A340E0D00823EE6 /* Assets.xcassets */,
 				2CAF00A12A340E0D00823EE6 /* Item.swift */,
@@ -144,6 +150,7 @@
 			files = (
 				2CAF00A02A340E0D00823EE6 /* Preview Assets.xcassets in Resources */,
 				2CAF009D2A340E0D00823EE6 /* Assets.xcassets in Resources */,
+				3518F8B32A343E60007C4178 /* pie_lemon_meringue.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +163,7 @@
 			files = (
 				2CAF00CC2A341CB700823EE6 /* LocationManager.swift in Sources */,
 				2CAF009B2A340E0B00823EE6 /* ContentView.swift in Sources */,
+				3518F8B12A343CFA007C4178 /* ObjectDetailView.swift in Sources */,
 				2CAF00CE2A341CD400823EE6 /* MapView.swift in Sources */,
 				2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */,
 				2CAF00992A340E0B00823EE6 /* Pocket_ObjectApp.swift in Sources */,
@@ -292,7 +300,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pocket-Object/Preview Content\"";
-				DEVELOPMENT_TEAM = VKGAQDGK5R;
+				DEVELOPMENT_TEAM = PHT5ZHW738;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = plz;
@@ -322,7 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pocket-Object/Preview Content\"";
-				DEVELOPMENT_TEAM = VKGAQDGK5R;
+				DEVELOPMENT_TEAM = PHT5ZHW738;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = plz;
