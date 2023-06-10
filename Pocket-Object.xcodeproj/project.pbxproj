@@ -22,6 +22,7 @@
 		36A3A6622A3439D9005B4B00 /* BottomSheetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A6612A3439D9005B4B00 /* BottomSheetItem.swift */; };
 		36A3A6672A343A4D005B4B00 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A6662A343A4D005B4B00 /* BottomSheetViewModel.swift */; };
 		550D5E692A34707D00D16C90 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D5E682A34707D00D16C90 /* ResultView.swift */; };
+		550D5E6B2A3470D700D16C90 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D5E6A2A3470D700D16C90 /* DirectoryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		36A3A6612A3439D9005B4B00 /* BottomSheetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetItem.swift; sourceTree = "<group>"; };
 		36A3A6662A343A4D005B4B00 /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
 		550D5E682A34707D00D16C90 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		550D5E6A2A3470D700D16C90 /* DirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,16 +75,16 @@
 		2CAF00972A340E0B00823EE6 /* Pocket-Object */ = {
 			isa = PBXGroup;
 			children = (
-				550D5E652A346FEC00D16C90 /* Capture */,
-				36A3A65B2A3438DB005B4B00 /* Model */,
-				36A3A65E2A343927005B4B00 /* BottomSheet */,
-				2CAF00982A340E0B00823EE6 /* Pocket_ObjectApp.swift */,
 				2CAF009A2A340E0B00823EE6 /* ContentView.swift */,
-				3518F8B02A343CFA007C4178 /* ObjectDetailView.swift */,
-				3518F8B22A343E60007C4178 /* pie_lemon_meringue.usdz */,
-				2CAF00CA2A341CAE00823EE6 /* Map */,
-				2CAF009C2A340E0D00823EE6 /* Assets.xcassets */,
 				2CAF00A12A340E0D00823EE6 /* Item.swift */,
+				3518F8B02A343CFA007C4178 /* ObjectDetailView.swift */,
+				2CAF00982A340E0B00823EE6 /* Pocket_ObjectApp.swift */,
+				3518F8B22A343E60007C4178 /* pie_lemon_meringue.usdz */,
+				2CAF009C2A340E0D00823EE6 /* Assets.xcassets */,
+				36A3A65E2A343927005B4B00 /* BottomSheet */,
+				550D5E652A346FEC00D16C90 /* Capture */,
+				2CAF00CA2A341CAE00823EE6 /* Map */,
+				36A3A65B2A3438DB005B4B00 /* Model */,
 				2CAF009E2A340E0D00823EE6 /* Preview Content */,
 			);
 			path = "Pocket-Object";
@@ -145,6 +147,7 @@
 				3518F8B42A343FAD007C4178 /* CapturePrimaryView.swift */,
 				550D5E672A34700500D16C90 /* Result */,
 				550D5E662A346FFC00D16C90 /* Reconstruction */,
+				550D5E6A2A3470D700D16C90 /* DirectoryManager.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAF00CC2A341CB700823EE6 /* LocationManager.swift in Sources */,
+				550D5E6B2A3470D700D16C90 /* DirectoryManager.swift in Sources */,
 				36A3A6672A343A4D005B4B00 /* BottomSheetViewModel.swift in Sources */,
 				2CAF009B2A340E0B00823EE6 /* ContentView.swift in Sources */,
 				3518F8B52A343FAD007C4178 /* CapturePrimaryView.swift in Sources */,
