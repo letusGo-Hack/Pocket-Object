@@ -11,6 +11,7 @@ import SwiftData
 struct BottomSheetView: View {
     @ObservedObject var viewModel: BottomSheetViewModel
     var onTap: (Content) -> Void
+    var isLocationMoveClicked: ((_ lat: String, _ log: String) -> Void)
     
     var body: some View {
         VStack {
@@ -19,11 +20,14 @@ struct BottomSheetView: View {
                     ForEach(viewModel.contents, id: \.self) { item in
                         ListItemView(content: item) {
                             item.bookmark.toggle()
+                        } isLocationMoveClicked: { lat, log in
+                            isLocationMoveClicked(lat, log)
                         }
                         .onTapGesture {
                             print(item)
                             onTap(item)
                         }
+
                     }
                 }
             }
