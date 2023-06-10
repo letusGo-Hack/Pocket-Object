@@ -392,7 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pocket-Object/Preview Content\"";
-				DEVELOPMENT_TEAM = N7B3VPVQX3;
+				DEVELOPMENT_TEAM = PHT5ZHW738;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "use camera for object capture";
@@ -423,7 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pocket-Object/Preview Content\"";
-				DEVELOPMENT_TEAM = N7B3VPVQX3;
+				DEVELOPMENT_TEAM = PHT5ZHW738;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "use camera for object capture";
