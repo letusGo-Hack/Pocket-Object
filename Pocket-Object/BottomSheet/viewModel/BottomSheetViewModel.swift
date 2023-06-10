@@ -9,5 +9,9 @@ import SwiftUI
 import SwiftData
 
 class BottomSheetViewModel: ObservableObject {
-    @Query(sort: \.title, order: .forward, animation: .default) var allContent: [Content]
+    @Published var contents: [Content] = []
+    
+    init() {
+        
+    }
 }

@@ -10,6 +10,11 @@ import MapKit
 import SwiftData
 
 struct MapView: View {
+    @Query(sort: \.title, order: .forward, animation: .default) var allContent: [Content]
+//    @State private var filteredContent: [Content] = []
+    
+    var bottomSheetViewModel = BottomSheetViewModel()
+    
   @StateObject var locationDataManager = LocationDataManager()
   @Namespace private var mapScope
   
@@ -23,6 +28,8 @@ struct MapView: View {
   
   @State private var showMarkerInfo: Bool = false
   
+    @State private var isBottomSheetShow: Bool = false
+    
   var body: some View {
     Map(position: $position, selection: $selectedTag, scope: mapScope) {
       
@@ -35,6 +42,10 @@ struct MapView: View {
       
       UserAnnotation()
     }
+    .onAppear {
+        bottomSheetViewModel.contents = allContent
+        isBottomSheetShow.toggle()
+    }
     .overlay(alignment: .bottomTrailing) {
       VStack {
         MapCompass(scope: mapScope)
@@ -46,7 +57,9 @@ struct MapView: View {
     }
     .mapScope(mapScope)
     .onChange(of: selectedMarker) {
-      print("onChanged")
+        guard let selectedMarker = selectedMarker else { return }
+        
+        bottomSheetViewModel.contents = [selectedMarker]
     }
     .onChange(of: selectedTag) { tag in
 
@@ -58,6 +71,14 @@ struct MapView: View {
 //      showMarkerInfo = true
       
     }
+    .sheet(isPresented: $isBottomSheetShow, content: {
+        BottomSheetView(viewModel: bottomSheetViewModel)
+            .presentationDetents([.height(300)])
+            .presentationBackgroundInteraction(.enabled(upThrough: .height(300)))
+            .interactiveDismissDisabled(true)
+    })
+
+      
     .sheet(isPresented: $showMarkerInfo, onDismiss: {
       withAnimation(.snappy) {
 //        if let boudingRect = route?.polyline.boundingMapRect, routeDisplaying {
@@ -79,7 +100,7 @@ struct MapView: View {
       
       
       
-      let newMaker = Content(imageUrl: "", date: Date.init(), title: "aaa", content: "bbb", lat: "37.51165285847918", log: "127.05760549475231", bookmark: true)
+//      let newMaker = Content(imageUrl: "", date: Date.init(), title: "aaa", content: "bbb", lat: "37.51165285847918", log: "127.05760549475231", bookmark: true)
       
 //      selectedTag = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(newMaker.lat) ?? 0.0, longitude: Double(newMaker.log) ?? 0.0)))
 //      context.insert(newMaker)
