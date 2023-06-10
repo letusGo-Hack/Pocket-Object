@@ -15,6 +15,7 @@
 		2CAF00CC2A341CB700823EE6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00CB2A341CB700823EE6 /* LocationManager.swift */; };
 		2CAF00CE2A341CD400823EE6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00CD2A341CD400823EE6 /* MapView.swift */; };
 		36A3A65D2A3438EF005B4B00 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A65C2A3438EF005B4B00 /* Content.swift */; };
+		36A3A6602A343935005B4B00 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A65F2A343935005B4B00 /* BottomSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		2CAF00CB2A341CB700823EE6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2CAF00CD2A341CD400823EE6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		36A3A65C2A3438EF005B4B00 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		36A3A65F2A343935005B4B00 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				36A3A65B2A3438DB005B4B00 /* Model */,
+				36A3A65E2A343927005B4B00 /* BottomSheet */,
 				2CAF00982A340E0B00823EE6 /* Pocket_ObjectApp.swift */,
 				2CAF009A2A340E0B00823EE6 /* ContentView.swift */,
 				2CAF00CA2A341CAE00823EE6 /* Map */,
@@ -93,6 +96,14 @@
 				36A3A65C2A3438EF005B4B00 /* Content.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		36A3A65E2A343927005B4B00 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				36A3A65F2A343935005B4B00 /* BottomSheetView.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				2CAF009B2A340E0B00823EE6 /* ContentView.swift in Sources */,
 				2CAF00CE2A341CD400823EE6 /* MapView.swift in Sources */,
 				2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */,
+				36A3A6602A343935005B4B00 /* BottomSheetView.swift in Sources */,
 				2CAF00992A340E0B00823EE6 /* Pocket_ObjectApp.swift in Sources */,
 				36A3A65D2A3438EF005B4B00 /* Content.swift in Sources */,
 			);
