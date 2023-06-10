@@ -9,13 +9,13 @@ import SwiftUI
 import SwiftData
 
 struct BottomSheetView: View {
-    let contents: [Content]
+    @ObservedObject var viewModel: BottomSheetViewModel
     
     var body: some View {
         VStack {
             ScrollView {
                 VStack {
-                    ForEach(contents, id: \.self) { item in
+                    ForEach(viewModel.contents, id: \.self) { item in
                         ListItemView(content: item) {
                             item.bookmark.toggle()
                         }

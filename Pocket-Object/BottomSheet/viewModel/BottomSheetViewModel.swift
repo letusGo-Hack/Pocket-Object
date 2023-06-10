@@ -7,3 +7,11 @@
 
 import SwiftUI
 import SwiftData
+
+class BottomSheetViewModel: ObservableObject {
+    @Published var contents: [Content] = []
+    
+    init() {
+        
+    }
+}

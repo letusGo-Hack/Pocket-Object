@@ -11,9 +11,10 @@ import SwiftData
 
 struct MapView: View {
     @Query(sort: \.title, order: .forward, animation: .default) var allContent: [Content]
-    @State private var filteredContent: [Content] = []
+//    @State private var filteredContent: [Content] = []
     
-//    @ObservedObject var bottomSheetViewModel = BottomSheetViewModel()
+    var bottomSheetViewModel = BottomSheetViewModel()
+    
   @StateObject var locationDataManager = LocationDataManager()
   @Namespace private var mapScope
   
@@ -42,6 +43,7 @@ struct MapView: View {
       UserAnnotation()
     }
     .onAppear {
+        bottomSheetViewModel.contents = allContent
         isBottomSheetShow.toggle()
     }
     .overlay(alignment: .bottomTrailing) {
@@ -55,13 +57,9 @@ struct MapView: View {
     }
     .mapScope(mapScope)
     .onChange(of: selectedMarker) {
-        guard let selectedID = selectedMarker?.id else { return }
+        guard let selectedMarker = selectedMarker else { return }
         
-        let fetchDescriptor = FetchDescriptor<Content>(predicate: #Predicate { $0.id == selectedID })
-        
-        let result = try? context.fetch(fetchDescriptor)
-        guard let result = result else { return }
-        self.filteredContent = result
+        bottomSheetViewModel.contents = [selectedMarker]
     }
     .onChange(of: selectedTag) { tag in
 
@@ -74,7 +72,7 @@ struct MapView: View {
       
     }
     .sheet(isPresented: $isBottomSheetShow, content: {
-        BottomSheetView(contents: self.allContent)
+        BottomSheetView(viewModel: bottomSheetViewModel)
             .presentationDetents([.height(300)])
             .presentationBackgroundInteraction(.enabled(upThrough: .height(300)))
             .interactiveDismissDisabled(true)
