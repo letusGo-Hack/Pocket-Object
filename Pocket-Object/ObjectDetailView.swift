@@ -209,7 +209,7 @@ struct CircleButton: View {
                     .shadow(color: .gray.opacity(0.5), radius: 10, x: 7, y: 7)
                 Image(systemName: imageString)
                     .foregroundColor(.white)
-                    .font(.system(size: 30, weight: .semibold))
+                    .font(.system(size: 20, weight: .semibold))
             }
         }
     }

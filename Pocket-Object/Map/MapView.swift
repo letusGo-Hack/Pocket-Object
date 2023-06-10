@@ -89,16 +89,12 @@ struct MapView: View {
             VStack {
                 HStack {
                     Spacer()
-                    Button {
+                    Button(action: {
                         presentCaptureView = true
-                    } label: {
-                        Image(systemName: "camera")
-                            .foregroundColor(.blue)
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(8)
+                    }) {
+                        CircleButton(imageString: "camera")
                     }
-                    .padding()
+                    .padding(.all)
                 }
                 Spacer()
             }
