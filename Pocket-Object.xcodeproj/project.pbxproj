@@ -16,6 +16,7 @@
 		2CAF00CE2A341CD400823EE6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00CD2A341CD400823EE6 /* MapView.swift */; };
 		3518F8B12A343CFA007C4178 /* ObjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518F8B02A343CFA007C4178 /* ObjectDetailView.swift */; };
 		3518F8B32A343E60007C4178 /* pie_lemon_meringue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3518F8B22A343E60007C4178 /* pie_lemon_meringue.usdz */; };
+		3518F8B52A343FAD007C4178 /* CapturePrimaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518F8B42A343FAD007C4178 /* CapturePrimaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		2CAF00CD2A341CD400823EE6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3518F8B02A343CFA007C4178 /* ObjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailView.swift; sourceTree = "<group>"; };
 		3518F8B22A343E60007C4178 /* pie_lemon_meringue.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pie_lemon_meringue.usdz; sourceTree = "<group>"; };
+		3518F8B42A343FAD007C4178 /* CapturePrimaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePrimaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				2CAF00982A340E0B00823EE6 /* Pocket_ObjectApp.swift */,
 				2CAF009A2A340E0B00823EE6 /* ContentView.swift */,
+				3518F8B42A343FAD007C4178 /* CapturePrimaryView.swift */,
 				3518F8B02A343CFA007C4178 /* ObjectDetailView.swift */,
 				3518F8B22A343E60007C4178 /* pie_lemon_meringue.usdz */,
 				2CAF00CA2A341CAE00823EE6 /* Map */,
@@ -163,6 +166,7 @@
 			files = (
 				2CAF00CC2A341CB700823EE6 /* LocationManager.swift in Sources */,
 				2CAF009B2A340E0B00823EE6 /* ContentView.swift in Sources */,
+				3518F8B52A343FAD007C4178 /* CapturePrimaryView.swift in Sources */,
 				3518F8B12A343CFA007C4178 /* ObjectDetailView.swift in Sources */,
 				2CAF00CE2A341CD400823EE6 /* MapView.swift in Sources */,
 				2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */,

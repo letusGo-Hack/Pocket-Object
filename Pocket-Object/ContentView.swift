@@ -22,7 +22,6 @@ struct ContentView: View {
                         Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -33,11 +32,21 @@ struct ContentView: View {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
+                ToolbarItem {
+                    Button(action: deleteItems) {
+                        Label("Add Item", systemImage: "-")
+                    }
+                }
             }
             Text("Select an item")
         }
         .sheet(isPresented: $presentSheet) {
             ObjectDetailView()
+        }
+        .sheet(isPresented: $presentCaptureView) {
+            CapturePrimaryView {
+                presentCaptureView = false
+            }
         }
     }
 
@@ -50,13 +59,10 @@ struct ContentView: View {
     }
     
     @State var presentSheet: Bool = false
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+    @State var presentCaptureView: Bool = false
+    
+    private func deleteItems() {
+        presentCaptureView = true
     }
 }
 

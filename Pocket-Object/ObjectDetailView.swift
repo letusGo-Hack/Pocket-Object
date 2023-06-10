@@ -8,14 +8,24 @@ import QuickLook
 import SwiftUI
 
 struct ObjectDetailView: View {
-    let usdzURL = Bundle.main.url(forResource: "pie_lemon_meringue", withExtension: "usdz")!
-        
+    
+    var usdzURL: URL
+   
     var body: some View {
-        USDZView(url: usdzURL)
-                    .frame(width: 300, height: 400)
-                    .onAppear {
-                        print(usdzURL.absoluteString)
-                    }
+        ScrollView(.vertical) {
+            VStack {
+               
+                USDZView(url: usdzURL)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+                
+                Text("Name")
+                Text("Description")
+                Text("Date")
+            }
+        }
+        .onAppear {
+            print(usdzURL.absoluteString)
+        }
     }
 }
 
