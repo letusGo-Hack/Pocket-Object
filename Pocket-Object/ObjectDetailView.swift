@@ -50,14 +50,19 @@ struct ObjectDetailView: View {
                         
                         HStack(alignment: .center) {
                             Button {
-                                print("bookmark")
+                                content?.bookmark.toggle()
                             } label: {
-                                Image(systemName: "bookmark")
-                                    .frame(height: 40)
-                                    .frame(maxWidth: UIScreen.main.bounds.width / 3)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color.lightNavy)
-                                    )
+                                HStack {
+                                    Image(systemName: (content?.bookmark ?? false) ? "bookmark.fill" : "bookmark")
+                                        .contentTransition(.symbolEffect(.replace.offUp))
+                                        .symbolEffect(.bounce, value: (content?.bookmark ?? false))
+                                }
+                                .frame(height: 40)
+                                .frame(maxWidth: UIScreen.main.bounds.width / 3)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color.lightNavy)
+                                )
+                                
 
                             }
                         }
