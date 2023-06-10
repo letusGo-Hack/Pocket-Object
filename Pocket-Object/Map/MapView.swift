@@ -21,7 +21,6 @@ extension MKCoordinateRegion {
 
 
 struct MapView: View {
-//<<<<<<< HEAD
     @Query(sort: \.title, order: .forward, animation: .default) var allContent: [Content]
     //    @State private var filteredContent: [Content] = []
     
@@ -42,46 +41,72 @@ struct MapView: View {
     
     @State private var isBottomSheetShow: Bool = false
     
+    // MARK: Capture
+    @State private var presentCaptureView: Bool = false
+    
     var body: some View {
-        Map(position: $position, selection: $selectedTag, scope: mapScope) {
-            
-            ForEach(Array(markers.enumerated()), id: \.offset) { offset, marker in
-                Marker(marker.title, systemImage: "suit.heart.fill", coordinate: CLLocationCoordinate2D(
-                    latitude: Double(marker.lat) ?? 0.0,
-                    longitude: Double(marker.log) ?? 0.0)
-                ).tag(offset)
+        ZStack {
+            Map(position: $position, selection: $selectedTag, scope: mapScope) {
+                
+                ForEach(Array(markers.enumerated()), id: \.offset) { offset, marker in
+                    Marker(marker.title, systemImage: "suit.heart.fill", coordinate: CLLocationCoordinate2D(
+                        latitude: Double(marker.lat) ?? 0.0,
+                        longitude: Double(marker.log) ?? 0.0)
+                    ).tag(offset)
+                }
+                
+                UserAnnotation()
             }
-            
-            UserAnnotation()
-        }
-        .onAppear {
-            bottomSheetViewModel.contents = allContent
-            isBottomSheetShow.toggle()
-        }
-        .overlay(alignment: .bottomTrailing) {
+            .onAppear {
+                bottomSheetViewModel.contents = allContent
+                isBottomSheetShow.toggle()
+            }
+            .overlay(alignment: .bottomTrailing) {
+                VStack {
+                    MapCompass(scope: mapScope)
+                    MapPitchButton(scope: mapScope)
+                    MapUserLocationButton(scope: mapScope)
+                }
+                .buttonBorderShape(.circle)
+                .padding()
+            }
+            .mapScope(mapScope)
+            .onChange(of: selectedMarker) {
+                guard let selectedMarker = selectedMarker else { return }
+                
+                bottomSheetViewModel.contents = [selectedMarker]
+            }
+            .onChange(of: selectedTag) { tag in
+                
+                
+                selectedMarker = markers[tag ?? 0]
+                //      print(markers[tag])
+                
+                
+                //      showMarkerInfo = true
+                
+            }
             VStack {
-                MapCompass(scope: mapScope)
-                MapPitchButton(scope: mapScope)
-                MapUserLocationButton(scope: mapScope)
+                HStack {
+                    Spacer()
+                    Button {
+                        presentCaptureView = true
+                    } label: {
+                        Image(systemName: "camera")
+                            .foregroundColor(.blue)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(8)
+                    }
+                    .padding()
+                }
+                Spacer()
             }
-            .buttonBorderShape(.circle)
-            .padding()
         }
-        .mapScope(mapScope)
-        .onChange(of: selectedMarker) {
-            guard let selectedMarker = selectedMarker else { return }
-            
-            bottomSheetViewModel.contents = [selectedMarker]
-        }
-        .onChange(of: selectedTag) { tag in
-            
-            
-            selectedMarker = markers[tag ?? 0]
-            //      print(markers[tag])
-            
-            
-            //      showMarkerInfo = true
-            
+        .sheet(isPresented: $presentCaptureView) {
+            CapturePrimaryView {
+                presentCaptureView = false
+            }
         }
         .sheet(isPresented: $presentObjectDetailView, content: {
             ObjectDetailView(content: selectedContent, tapDismiss: {
