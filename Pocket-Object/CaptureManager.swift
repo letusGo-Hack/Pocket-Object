@@ -19,6 +19,7 @@ final class CaptureManager: ObservableObject {
     
     func start() {
         configuration.checkpointDirectory = getDocumentsDirectory().appendingPathComponent("Snapshots/")
+        configuration.isOverCaptureEnabled = true
         let url: URL = getDocumentsDirectory().appendingPathComponent("Images/")
         print(url.absoluteString)
         session.start(imagesDirectory: url, configuration: configuration)

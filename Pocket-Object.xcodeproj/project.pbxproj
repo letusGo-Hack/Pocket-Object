@@ -14,6 +14,7 @@
 		2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00A12A340E0D00823EE6 /* Item.swift */; };
 		3518F8A82A34125C007C4178 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518F8A72A34125C007C4178 /* CameraView.swift */; };
 		3518F8AA2A341285007C4178 /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518F8A92A341285007C4178 /* CaptureManager.swift */; };
+		3518F8AD2A342DBF007C4178 /* GeoTrackKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3518F8AC2A342DBF007C4178 /* GeoTrackKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3518F8AD2A342DBF007C4178 /* GeoTrackKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +94,9 @@
 			dependencies = (
 			);
 			name = "Pocket-Object";
+			packageProductDependencies = (
+				3518F8AC2A342DBF007C4178 /* GeoTrackKit */,
+			);
 			productName = "Pocket-Object";
 			productReference = 2CAF00952A340E0B00823EE6 /* Pocket-Object.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 2CAF008C2A340E0B00823EE6;
+			packageReferences = (
+				3518F8AB2A342DBF007C4178 /* XCRemoteSwiftPackageReference "GeoTrackKit" */,
+			);
 			productRefGroup = 2CAF00962A340E0B00823EE6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3518F8AB2A342DBF007C4178 /* XCRemoteSwiftPackageReference "GeoTrackKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/intere/GeoTrackKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3518F8AC2A342DBF007C4178 /* GeoTrackKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3518F8AB2A342DBF007C4178 /* XCRemoteSwiftPackageReference "GeoTrackKit" */;
+			productName = GeoTrackKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CAF008D2A340E0B00823EE6 /* Project object */;
 }

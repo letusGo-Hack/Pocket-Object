@@ -41,6 +41,9 @@ struct ContentView: View {
                 presentCaptureView = false
             })
         })
+        .onAppear {
+            CaptureManager.shared.start()
+        }
     }
 
     private func addItem() {

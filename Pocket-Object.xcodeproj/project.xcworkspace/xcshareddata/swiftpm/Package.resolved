@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "geotrackkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/intere/GeoTrackKit.git",
+      "state" : {
+        "revision" : "06d76d1b52bfd4a96dbdb3c6d73fee4c09abd865",
+        "version" : "1.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}

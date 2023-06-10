@@ -22,7 +22,7 @@ struct Pocket_ObjectApp: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate {
      func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-         CaptureManager.shared.start()
+         
          return true
     }
 }

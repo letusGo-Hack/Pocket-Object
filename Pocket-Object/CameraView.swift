@@ -4,7 +4,7 @@
 //
 //  Created by 김윤석 on 2023/06/10.
 //
-
+import GeoTrackKit
 import RealityKit
 import SwiftUI
 
@@ -23,7 +23,7 @@ struct CapturePrimaryView: View {
             case .ready:
                 VStack {
                     Text("Ready")
-                    
+                    Spacer()
                     Button {
                         single.session.startDetecting()
                     } label: {
