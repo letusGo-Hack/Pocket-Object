@@ -58,18 +58,16 @@ struct MapView: View {
       .padding()
     }
     .mapScope(mapScope)
-    .onChange(of: selectedMarker) {
-        guard let selectedMarker = selectedMarker else { return }
-        
-        bottomSheetViewModel.contents = [selectedMarker]
-    }
     .onChange(of: selectedTag) { tag in
+        guard let tag = tag else {
+            bottomSheetViewModel.contents = allContent
+            return
+        }
+      selectedMarker = markers[tag]
 
-      
-      selectedMarker = markers[tag ?? 0]
-//      print(markers[tag])
-      
-      
+        if let selectedMarker = selectedMarker {
+            bottomSheetViewModel.contents = [selectedMarker]
+        }
 //      showMarkerInfo = true
       
     }
@@ -102,10 +100,10 @@ struct MapView: View {
       
       
       
-//      let newMaker = Content(imageUrl: "", date: Date.init(), title: "aaa", content: "bbb", lat: "37.51165285847918", log: "127.05760549475231", bookmark: true)
+      let newMaker = Content(imageUrl: "", date: Date.init(), title: "aaa", content: "bbb", lat: "37.51165285847918", log: "127.05760549475231", bookmark: true)
       
 //      selectedTag = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(newMaker.lat) ?? 0.0, longitude: Double(newMaker.log) ?? 0.0)))
-//      context.insert(newMaker)
+      context.insert(newMaker)
 
     }
   }
