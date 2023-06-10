@@ -15,7 +15,7 @@ struct CapturePrimaryView: View {
     @State var fileName: String = ""
     var onDismiss: () -> Void
     @State var shouldShowProgressView = false
-    @State var mockCompleteScanPass = falseÎÎ
+    @State var mockCompleteScanPass = false
     @State var reconstructionFinished = false
     
     var body: some View {
