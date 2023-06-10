@@ -18,6 +18,7 @@
 		36A3A6602A343935005B4B00 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A65F2A343935005B4B00 /* BottomSheetView.swift */; };
 		36A3A6622A3439D9005B4B00 /* BottomSheetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A6612A3439D9005B4B00 /* BottomSheetItem.swift */; };
 		36A3A6672A343A4D005B4B00 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A6662A343A4D005B4B00 /* BottomSheetViewModel.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		36A3A65F2A343935005B4B00 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		36A3A6612A3439D9005B4B00 /* BottomSheetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetItem.swift; sourceTree = "<group>"; };
 		36A3A6662A343A4D005B4B00 /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				36A3A65C2A3438EF005B4B00 /* Content.swift */,
+
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
+
 		36A3A65E2A343927005B4B00 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +132,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,6 +212,7 @@
 				36A3A6622A3439D9005B4B00 /* BottomSheetItem.swift in Sources */,
 				2CAF00992A340E0B00823EE6 /* Pocket_ObjectApp.swift in Sources */,
 				36A3A65D2A3438EF005B4B00 /* Content.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
