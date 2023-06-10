@@ -16,6 +16,8 @@
 		2CAF00CE2A341CD400823EE6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00CD2A341CD400823EE6 /* MapView.swift */; };
 		36A3A65D2A3438EF005B4B00 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A65C2A3438EF005B4B00 /* Content.swift */; };
 		36A3A6602A343935005B4B00 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A65F2A343935005B4B00 /* BottomSheetView.swift */; };
+		36A3A6622A3439D9005B4B00 /* BottomSheetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A6612A3439D9005B4B00 /* BottomSheetItem.swift */; };
+		36A3A6672A343A4D005B4B00 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A6662A343A4D005B4B00 /* BottomSheetViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		2CAF00CD2A341CD400823EE6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		36A3A65C2A3438EF005B4B00 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		36A3A65F2A343935005B4B00 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		36A3A6612A3439D9005B4B00 /* BottomSheetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetItem.swift; sourceTree = "<group>"; };
+		36A3A6662A343A4D005B4B00 /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,19 @@
 		36A3A65E2A343927005B4B00 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				36A3A6632A343A14005B4B00 /* viewModel */,
 				36A3A65F2A343935005B4B00 /* BottomSheetView.swift */,
+				36A3A6612A3439D9005B4B00 /* BottomSheetItem.swift */,
 			);
 			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		36A3A6632A343A14005B4B00 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				36A3A6662A343A4D005B4B00 /* BottomSheetViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAF00CC2A341CB700823EE6 /* LocationManager.swift in Sources */,
+				36A3A6672A343A4D005B4B00 /* BottomSheetViewModel.swift in Sources */,
 				2CAF009B2A340E0B00823EE6 /* ContentView.swift in Sources */,
 				2CAF00CE2A341CD400823EE6 /* MapView.swift in Sources */,
 				2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */,
 				36A3A6602A343935005B4B00 /* BottomSheetView.swift in Sources */,
+				36A3A6622A3439D9005B4B00 /* BottomSheetItem.swift in Sources */,
 				2CAF00992A340E0B00823EE6 /* Pocket_ObjectApp.swift in Sources */,
 				36A3A65D2A3438EF005B4B00 /* Content.swift in Sources */,
 			);
