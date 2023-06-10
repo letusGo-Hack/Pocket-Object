@@ -36,13 +36,15 @@ struct ContentView: View {
             }
             Text("Select an item")
         }
+        .sheet(isPresented: $presentCaptureView, content: {
+            CapturePrimaryView(onDismiss: {
+                presentCaptureView = false
+            })
+        })
     }
 
     private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
+        presentCaptureView = true
     }
 
     private func deleteItems(offsets: IndexSet) {
@@ -52,6 +54,8 @@ struct ContentView: View {
             }
         }
     }
+    
+    @State var presentCaptureView: Bool = false
 }
 
 #Preview {

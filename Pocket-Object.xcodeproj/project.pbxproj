@@ -12,6 +12,8 @@
 		2CAF009D2A340E0D00823EE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAF009C2A340E0D00823EE6 /* Assets.xcassets */; };
 		2CAF00A02A340E0D00823EE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAF009F2A340E0D00823EE6 /* Preview Assets.xcassets */; };
 		2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00A12A340E0D00823EE6 /* Item.swift */; };
+		3518F8A82A34125C007C4178 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518F8A72A34125C007C4178 /* CameraView.swift */; };
+		3518F8AA2A341285007C4178 /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518F8A92A341285007C4178 /* CaptureManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		2CAF009C2A340E0D00823EE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CAF009F2A340E0D00823EE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CAF00A12A340E0D00823EE6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		3518F8A72A34125C007C4178 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		3518F8A92A341285007C4178 /* CaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			children = (
 				2CAF00982A340E0B00823EE6 /* Pocket_ObjectApp.swift */,
 				2CAF009A2A340E0B00823EE6 /* ContentView.swift */,
+				3518F8A72A34125C007C4178 /* CameraView.swift */,
+				3518F8A92A341285007C4178 /* CaptureManager.swift */,
 				2CAF009C2A340E0D00823EE6 /* Assets.xcassets */,
 				2CAF00A12A340E0D00823EE6 /* Item.swift */,
 				2CAF009E2A340E0D00823EE6 /* Preview Content */,
@@ -143,6 +149,8 @@
 				2CAF009B2A340E0B00823EE6 /* ContentView.swift in Sources */,
 				2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */,
 				2CAF00992A340E0B00823EE6 /* Pocket_ObjectApp.swift in Sources */,
+				3518F8A82A34125C007C4178 /* CameraView.swift in Sources */,
+				3518F8AA2A341285007C4178 /* CaptureManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,9 +284,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pocket-Object/Preview Content\"";
-				DEVELOPMENT_TEAM = VKGAQDGK5R;
+				DEVELOPMENT_TEAM = PHT5ZHW738;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"let me use your damn camera\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -305,9 +314,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pocket-Object/Preview Content\"";
-				DEVELOPMENT_TEAM = VKGAQDGK5R;
+				DEVELOPMENT_TEAM = PHT5ZHW738;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"let me use your damn camera\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
