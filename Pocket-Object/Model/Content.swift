@@ -20,7 +20,7 @@ class Content {
     /// 즐겨 찾기
     var bookmark: Bool
 
-    init(id: String, imageUrl: String, date: Date, title: String, content: String, lat: String, log: String, bookmark: Bool) {
+    init(imageUrl: String, date: Date, title: String, content: String, lat: String, log: String, bookmark: Bool) {
         self.id = UUID()
         self.imageUrl = imageUrl
         self.date = date

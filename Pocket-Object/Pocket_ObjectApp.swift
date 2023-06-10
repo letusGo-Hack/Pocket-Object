@@ -10,10 +10,11 @@ import SwiftData
 
 @main
 struct Pocket_ObjectApp: App {
-
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BottomSheetView()
+                .modelContainer(for: [Content.self])
         }
         .modelContainer(for: Item.self)
     }
