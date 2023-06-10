@@ -7,49 +7,301 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "68BEAC84-21FE-49A8-AD70-6A54F6181A23"
-            shouldBeEnabled = "No"
+            uuid = "8F67F951-EBC5-4240-8F56-B883660B72BA"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pocket-Object/CameraView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "reconstruction()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8F67F951-EBC5-4240-8F56-B883660B72BA - c0b1f588828f6258"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "196"
+                  endingLineNumber = "196"
+                  offsetFromSymbolStart = "3176">
+               </Location>
+               <Location
+                  uuid = "8F67F951-EBC5-4240-8F56-B883660B72BA - 77e4518d52ae9d54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #1 @Sendable () async -&gt; () in Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "196"
+                  endingLineNumber = "196"
+                  offsetFromSymbolStart = "1136">
+               </Location>
+               <Location
+                  uuid = "8F67F951-EBC5-4240-8F56-B883660B72BA - bb4f6723ef393f57"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #1 @Sendable () async -&gt; () in Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "196"
+                  endingLineNumber = "196"
+                  offsetFromSymbolStart = "688">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "915059C3-C81D-48C5-AD91-2EE4B29F49D4"
-            shouldBeEnabled = "No"
+            uuid = "8FEE8DE9-BC6D-4AF2-89CE-2C868180F7EF"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pocket-Object/CameraView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "reconstruction()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8FEE8DE9-BC6D-4AF2-89CE-2C868180F7EF - 77e4518d52ae9a8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #1 @Sendable () async -&gt; () in Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "692">
+               </Location>
+               <Location
+                  uuid = "8FEE8DE9-BC6D-4AF2-89CE-2C868180F7EF - 77e4518d52ae9a8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #1 @Sendable () async -&gt; () in Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "368">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3A39A863-C24F-43BB-B5FE-B477EE68C87B"
-            shouldBeEnabled = "No"
+            uuid = "61D3EA08-6ED3-4A73-9BF0-4DD5D1DEE451"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pocket-Object/CameraView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "reconstruction()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "61D3EA08-6ED3-4A73-9BF0-4DD5D1DEE451 - c0b1f588828f66dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "3012">
+               </Location>
+               <Location
+                  uuid = "61D3EA08-6ED3-4A73-9BF0-4DD5D1DEE451 - fd931a28cd9188a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #1 @Sendable () async -&gt; () in Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "544">
+               </Location>
+               <Location
+                  uuid = "61D3EA08-6ED3-4A73-9BF0-4DD5D1DEE451 - d0b223205d765dd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #1 @Sendable () async -&gt; () in Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "61D3EA08-6ED3-4A73-9BF0-4DD5D1DEE451 - c0b1f588828f66fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "4604">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B563D620-5A69-4A96-B0A0-B59B1DEF7C60"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pocket-Object/CameraView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "reconstruction()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B563D620-5A69-4A96-B0A0-B59B1DEF7C60 - c0b1f588828f66be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "3336">
+               </Location>
+               <Location
+                  uuid = "B563D620-5A69-4A96-B0A0-B59B1DEF7C60 - c0b1f588828f66be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "4088">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61BC5B12-3AD6-46F0-973C-6BFD9D22E3DE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pocket-Object/CameraView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "reconstruction()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "61BC5B12-3AD6-46F0-973C-6BFD9D22E3DE - c0b1f588828c980b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "1004">
+               </Location>
+               <Location
+                  uuid = "61BC5B12-3AD6-46F0-973C-6BFD9D22E3DE - c0b1f588828c980b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "996">
+               </Location>
+               <Location
+                  uuid = "61BC5B12-3AD6-46F0-973C-6BFD9D22E3DE - c0b1f588828c980b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pocket_Object.CapturePrimaryView.reconstruction() -&gt; ()"
+                  moduleName = "Pocket-Object"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunjunsu/IOS/Pocket-Object/Pocket-Object/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "1056">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

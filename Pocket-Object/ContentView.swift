@@ -11,6 +11,7 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    @State var presentDetailView = false
     
     var body: some View {
         NavigationView {
@@ -26,7 +27,11 @@ struct ContentView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                    Button{
+                        edit()
+                    } label: {
+                        Text("Edit")
+                    }
                 }
                 ToolbarItem {
                     Button(action: addItem) {
@@ -36,6 +41,9 @@ struct ContentView: View {
             }
             Text("Select an item")
         }
+        .sheet(isPresented: $presentDetailView, content: {
+            Viewer3D()
+        })
         .sheet(isPresented: $presentCaptureView, content: {
             CapturePrimaryView(onDismiss: {
                 presentCaptureView = false
@@ -48,6 +56,10 @@ struct ContentView: View {
 
     private func addItem() {
         presentCaptureView = true
+    }
+    
+    private func edit() {
+        presentDetailView = true
     }
 
     private func deleteItems(offsets: IndexSet) {

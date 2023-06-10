@@ -7,96 +7,54 @@
 import GeoTrackKit
 import RealityKit
 import SwiftUI
+import OSLog
 
 struct CapturePrimaryView: View {
-    //    @StateObject var single = CaptureManager.shared
     @StateObject var session = ObjectCaptureSession()
-    @State var captureCount: Int = 1
+    let uuidString = UUID().uuidString
+    @State var fileName: String = ""
     var onDismiss: () -> Void
     @State var shouldShowProgressView = false
+    @State var mockCompleteScanPass = true
+    @State var reconstructionFinished = false
     
     var body: some View {
-        if session.userCompletedScanPass {
+        if session.userCompletedScanPass || mockCompleteScanPass {
             VStack {
-                ObjectCapturePointCloudView(session: session)
-                Button {
-                    session.beginNewScanPassAfterFlip()
-                } label: {
-                    Text("돌려서 다시 찍기")
-                }
-                Spacer()
-                    .frame(height: 50)
-                Button {
-                    session.beginNewScanPass()
-                } label: {
-                    Text("한번 더 찍기")
-                }
+//                ObjectCapturePointCloudView(session: session)
                 
                 Spacer()
-                    .frame(height: 50)
                 
-                if case .completed = session.state {
+                VStack(alignment: .center) {
+                    TextField(text: $fileName, label: {
+                        Text("저장할 파일 이름을 입력해주세요.")
+                    })
+                    
                     Button {
-                        shouldShowProgressView = true
+                        if !fileName.isEmpty {
+                            shouldShowProgressView = true
+                            reconstruction()
+                        }
                     } label: {
                         Text("reconstruction")
                     }
-                } else {
-                    Button {
-                        session.finish()
-                    } label: {
-                        Text("finish")
-                    }
+                    .frame(height: 200)
+                    .foregroundColor(.blue)
                 }
+                .padding()
             }
             .onDisappear(perform: {
                 onDismiss()
             })
             if shouldShowProgressView {
-                ProgressView().task {
-                    Task {
-                        var configuration = PhotogrammetrySession.Configuration()
-                        configuration.checkpointDirectory = getDocumentsDirectory().appendingPathComponent("Snapshots/\(UUID().uuidString)")
-                        let url: URL = getDocumentsDirectory().appendingPathComponent("Images/\(UUID().uuidString)")
-                        let session = try PhotogrammetrySession(input: url, configuration: configuration)
-                        try session.process(requests: [
-                            PhotogrammetrySession.Request.modelFile(url: getDocumentsDirectory().appendingPathComponent("model.usdz"))
-                        ])
-                        
-                        let waiter = Task {
-                            do {
-                                for try await output in session.outputs {
-                                    switch output {
-                                    case .processingComplete:
-                                        print("RealityKit has processed all requests.")
-                                    case .requestError(let request, let error):
-                                        print("Request encountered an error.")
-                                    case .requestComplete(let request, let result):
-                                        print("RealityKit has finished processing a request.")
-                                    case .requestProgress(let request, let fractionComplete):
-                                        print("Periodic progress update. Update UI here.")
-                                    case .requestProgressInfo(let request, let progressInfo):
-                                        print("Periodic progress info update.")
-                                    case .inputComplete:
-                                        print("Ingestion of images is complete and processing begins.")
-                                    case .invalidSample(let id, let reason):
-                                        print("RealityKit deemed a sample invalid and didn't use it.")
-                                    case .skippedSample(let id):
-                                        print("RealityKit was unable to use a provided sample.")
-                                    case .automaticDownsampling:
-                                        print("RealityKit downsampled the input images because of resource constraints.")
-                                    case .processingCancelled:
-                                        print("Processing was canceled.")
-                                    @unknown default:
-                                        print("Unrecognized output.")
-                                    }
-                                }
-                            } catch {
-                                print("Output: ERROR = \(String(describing: error))")
-                                // Handle error.
-                            }
-                        }
-                    }
+                ProgressView()
+            }
+            if reconstructionFinished {
+                VStack {
+                    Text("reconstructionFinished")
+                    NavigationLink("상세뷰 진입", destination: {
+                        Viewer3D(fileName: fileName)
+                    })
                 }
             }
         }
@@ -138,24 +96,12 @@ struct CapturePrimaryView: View {
                         } label: {
                             Text("requestImageCapture")
                         }
-                        Spacer()
-                            .frame(height: 50)
-                        
                     }
                 case .finishing:
                     Text("Finishing")
                     
                 case .completed:
                     Text("completed")
-                    if captureCount != 3 {
-                        Button {
-                            captureCount += 1
-                            session.startCapturing()
-                        } label: {
-                            Text("Start Capturing")
-                        }
-                    }
-                    
                     //사용자가 object 정보를 저장하는 view가 present
                     
                 case .failed(let error):
@@ -167,16 +113,65 @@ struct CapturePrimaryView: View {
             }
             .onAppear(perform: {
                 var configuration = ObjectCaptureSession.Configuration()
-                configuration.checkpointDirectory = getDocumentsDirectory().appendingPathComponent("Snapshots/\(UUID().uuidString)")
+                configuration.checkpointDirectory = getDocumentsDirectory().appendingPathComponent("Snapshots/\(uuidString)")
                 configuration.isOverCaptureEnabled = true
-                let url: URL = getDocumentsDirectory().appendingPathComponent("Images/\(UUID().uuidString)")
+                let url: URL = getDocumentsDirectory().appendingPathComponent("Images/\(uuidString)")
                 session.start(imagesDirectory: url, configuration: configuration)
             })
         }
     }
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
     
-}
-func getDocumentsDirectory() -> URL {
-    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    return paths[0]
+    func reconstruction() {
+        var configuration = PhotogrammetrySession.Configuration()
+        configuration.checkpointDirectory = getDocumentsDirectory().appendingPathComponent("Snapshots/\(uuidString)")
+        let url: URL = getDocumentsDirectory().appendingPathComponent("Images/\(uuidString)")
+        var session: PhotogrammetrySession
+        do {
+            session = try PhotogrammetrySession(input: url, configuration: configuration)
+            try session.process(requests: [
+                PhotogrammetrySession.Request.modelFile(url: getDocumentsDirectory().appendingPathComponent("testModel.usdz"))
+            ])
+        } catch {
+            return
+        }
+        Task {
+            do {
+                for try await output in session.outputs {
+                    switch output {
+                    case .processingComplete:
+                        os_log(.debug, "[log]: RealityKit has processed all requests.")
+                    case .requestError(let request, let error):
+                        os_log(.debug, "[log]: Request encountered an error.")
+                    case .requestComplete(let request, let result):
+                        reconstructionFinished = true
+                        shouldShowProgressView = false
+                        os_log(.debug, "[log]: RealityKit has finished processing a request.")
+                    case .requestProgress(let request, let fractionComplete):
+                        os_log(.debug, "[log]: Periodic progress update \(fractionComplete). Update UI here.")
+                    case .requestProgressInfo(let request, let progressInfo):
+                        os_log(.debug, "[log]: Periodic progress info update.")
+                    case .inputComplete:
+                        os_log(.debug, "[log]: Ingestion of images is complete and processing begins.")
+                    case .invalidSample(let id, let reason):
+                        os_log(.debug, "[log]: RealityKit deemed a sample invalid and didn't use it.")
+                    case .skippedSample(let id):
+                        os_log(.debug, "[log]: RealityKit was unable to use a provided sample.")
+                    case .automaticDownsampling:
+                        os_log(.debug, "[log]: RealityKit downsampled the input images because of resource constraints.")
+                    case .processingCancelled:
+                        os_log(.debug, "[log]: Processing was canceled.")
+                    @unknown default:
+                        os_log(.debug, "[log]: Unrecognized output.")
+                    }
+                }
+            } catch {
+                os_log(.debug, "Output: ERROR = \(String(describing: error))")
+                // Handle error.
+            }
+        }
+    }
 }
