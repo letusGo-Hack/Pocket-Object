@@ -12,6 +12,10 @@
 		2CAF009D2A340E0D00823EE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAF009C2A340E0D00823EE6 /* Assets.xcassets */; };
 		2CAF00A02A340E0D00823EE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAF009F2A340E0D00823EE6 /* Preview Assets.xcassets */; };
 		2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF00A12A340E0D00823EE6 /* Item.swift */; };
+		362221092A34101B00AFEEE3 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362221082A34101B00AFEEE3 /* ListView.swift */; };
+		3622210B2A34106300AFEEE3 /* TestListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3622210A2A34106300AFEEE3 /* TestListContentView.swift */; };
+		3622210F2A34117200AFEEE3 /* DummyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3622210E2A34117200AFEEE3 /* DummyListViewModel.swift */; };
+		362221112A3415AC00AFEEE3 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362221102A3415AC00AFEEE3 /* ListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		2CAF009C2A340E0D00823EE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CAF009F2A340E0D00823EE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CAF00A12A340E0D00823EE6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		362221082A34101B00AFEEE3 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		3622210A2A34106300AFEEE3 /* TestListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestListContentView.swift; sourceTree = "<group>"; };
+		3622210E2A34117200AFEEE3 /* DummyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyListViewModel.swift; sourceTree = "<group>"; };
+		362221102A3415AC00AFEEE3 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 				2CAF009A2A340E0B00823EE6 /* ContentView.swift */,
 				2CAF009C2A340E0D00823EE6 /* Assets.xcassets */,
 				2CAF00A12A340E0D00823EE6 /* Item.swift */,
+				362221052A340FF600AFEEE3 /* List */,
 				2CAF009E2A340E0D00823EE6 /* Preview Content */,
 			);
 			path = "Pocket-Object";
@@ -68,6 +77,33 @@
 				2CAF009F2A340E0D00823EE6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		362221052A340FF600AFEEE3 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				3622210D2A34115800AFEEE3 /* ViewModel */,
+				3622210C2A34114E00AFEEE3 /* View */,
+				3622210A2A34106300AFEEE3 /* TestListContentView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		3622210C2A34114E00AFEEE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				362221082A34101B00AFEEE3 /* ListView.swift */,
+				362221102A3415AC00AFEEE3 /* ListItemView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3622210D2A34115800AFEEE3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3622210E2A34117200AFEEE3 /* DummyListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				362221092A34101B00AFEEE3 /* ListView.swift in Sources */,
+				362221112A3415AC00AFEEE3 /* ListItemView.swift in Sources */,
+				3622210F2A34117200AFEEE3 /* DummyListViewModel.swift in Sources */,
+				3622210B2A34106300AFEEE3 /* TestListContentView.swift in Sources */,
 				2CAF009B2A340E0B00823EE6 /* ContentView.swift in Sources */,
 				2CAF00A22A340E0D00823EE6 /* Item.swift in Sources */,
 				2CAF00992A340E0B00823EE6 /* Pocket_ObjectApp.swift in Sources */,
@@ -279,6 +319,9 @@
 				DEVELOPMENT_TEAM = VKGAQDGK5R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pocket-Object/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치 권한";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 권한 2";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +351,9 @@
 				DEVELOPMENT_TEAM = VKGAQDGK5R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pocket-Object/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치 권한";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 권한 2";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
