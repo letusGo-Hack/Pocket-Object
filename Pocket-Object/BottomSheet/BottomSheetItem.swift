@@ -8,26 +8,33 @@
 import SwiftUI
 
 struct ListItemView: View {
+    @State var bounceValue: Int = 0
+    
+    var content: Content
+    var isBookMartStateChange: (() -> Void)
+    
     let dateformat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "YYYY년 M월 d일"
         return formatter
     }()
     
-    @State var bounceValue: Int = 0
-    var content: Content
-    
     var body: some View {
         HStack {
-            VStack {
-                Text("\(content.date, formatter: dateformat)")
+            VStack(alignment: .leading) {
+                
                 Text("\(content.title)")
+                    .font(.title)
+                
+                Text("\(content.date, formatter: dateformat)")
+                    .font(.subheadline)
                 
                 Spacer()
                 
                 HStack {
                     Button {
-                        content.bookmark.toggle()
+                        self.isBookMartStateChange()
+                        //                        content.bookmark.toggle()
                     } label: {
                         Image(systemName: content.bookmark ? "bookmark.fill" : "bookmark")
                             .contentTransition(.symbolEffect(.replace.offUp))

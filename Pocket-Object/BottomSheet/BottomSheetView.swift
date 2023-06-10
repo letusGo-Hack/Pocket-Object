@@ -24,7 +24,9 @@ struct BottomSheetView: View {
             ScrollView {
                 VStack {
                     ForEach(items, id: \.self) { item in
-                        ListItemView(content: item)
+                        ListItemView(content: item) {
+                            item.bookmark.toggle()
+                        }
                     }
                 }
             }
