@@ -12,6 +12,7 @@ struct ListItemView: View {
     
     var content: Content
     var isBookMartStateChange: (() -> Void)
+    var isLocationMoveClicked: ((_ lat: String, _ log: String) -> Void)
     
     let dateformat: DateFormatter = {
         let formatter = DateFormatter()
@@ -42,6 +43,7 @@ struct ListItemView: View {
                     
                     Button {
                         bounceValue += 1
+                        isLocationMoveClicked(content.lat, content.log)
                     } label: {
                         Image(systemName: "square.and.arrow.up")
                             .symbolEffect(.bounce, value: bounceValue)
