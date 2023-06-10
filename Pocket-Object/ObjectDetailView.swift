@@ -12,7 +12,8 @@ import SwiftUI
 struct ObjectDetailView: View {
     @Environment(\.presentationMode) var presentationMode
 //    var usdzURL: URL
-    var content: Content
+    var content: Content?
+    var tapDismiss: () -> Void
     
     var body: some View {
         ZStack{
@@ -21,7 +22,7 @@ struct ObjectDetailView: View {
             ScrollView(.vertical) {
                 VStack {
                     VStack {
-                        ARViewContainer(url: content.imageUrl)
+                        ARViewContainer(url: content?.imageUrl ?? "")
                             .frame(
                                 width: UIScreen.main.bounds.width,
                                 height: UIScreen.main.bounds.width
@@ -36,13 +37,13 @@ struct ObjectDetailView: View {
                     
                     VStack(alignment: .leading, spacing: 20) {
                         HStack {
-                            Text("Name: Clone X")
+                            Text("Name: \(content?.title ?? "")")
                                 .font(.title)
                             Spacer()
                         }
                         
                         HStack {
-                            Text("Date: 12.02.2021")
+                            Text("Date: \(content?.date ?? Date())")
                                 .font(.subheadline)
                             Spacer()
                         }
@@ -60,8 +61,8 @@ struct ObjectDetailView: View {
                             }
                         }
                         
-                        cellView("lat", content: "38.999")
-                        cellView("long", content: "138.999")
+                        cellView("lat", content: "\(content?.lat ?? "0")")
+                        cellView("long", content: "\(content?.log ?? "0")")
                     }
                     .foregroundColor(.white)
                     .padding(.horizontal)
@@ -74,8 +75,7 @@ struct ObjectDetailView: View {
                     Spacer()
                     
                     Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                        
+                        tapDismiss()
                     }) {
                         CircleButton(imageString: "xmark")
                     }
@@ -111,8 +111,9 @@ struct ARViewContainer: UIViewRepresentable {
         
         // 1: Load .obj file
         guard let url = URL(string: url) else { return SCNView() }
-//        SCNScene(url: <#T##URL#>) 이걸로 바꿔야한다.
-        let scene = SCNScene(named: "pie_lemon_meringue.usdz")
+        let scene = try? SCNScene(url: url)
+        
+//        let scene = SCNScene(named: "pie_lemon_meringue.usdz")
         
         // 2: Add camera node
         let cameraNode = SCNNode()

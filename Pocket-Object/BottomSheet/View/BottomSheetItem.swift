@@ -52,16 +52,19 @@ struct ListItemView: View {
             
             Spacer()
             
-            VStack(alignment: .center) {
-                Button {
-                    
-                } label: {
-                    Image(systemName: "greaterthan")
-                }
-                .frame(width: 40, height: 40)
-            }
+//            VStack(alignment: .center) {
+//                Button {
+//                    
+//                } label: {
+//                    Image(systemName: "greaterthan")
+//                }
+//                .frame(width: 40, height: 40)
+//            }
         }
         .padding()
+        .foregroundColor(.white)
+        .background(.darkNavy)
+        .contentShape(Rectangle())
     }
 }
 

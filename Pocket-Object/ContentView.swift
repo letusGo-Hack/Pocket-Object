@@ -41,22 +41,26 @@ struct ContentView: View {
             Text("Select an item")
         }
         .sheet(isPresented: $presentSheet) {
-//            if let url = URL(string: "") {
-            ObjectDetailView(
-//                content:
-//                    .init(
-//                        imageUrl: "",
-//                        date: Date(),
-//                        title: "",
-//                        content: "",
-//                        lat: "",
-//                        log: "",
-//                        bookmark: false
-//                    )
-            )
-//            } else {
-//                EmptyView()
-//            }
+//<<<<<<< Updated upstream
+////            if let url = URL(string: "") {
+//            ObjectDetailView(
+////                content:
+////                    .init(
+////                        imageUrl: "",
+////                        date: Date(),
+////                        title: "",
+////                        content: "",
+////                        lat: "",
+////                        log: "",
+////                        bookmark: false
+////                    )
+//            )
+////            } else {
+////                EmptyView()
+////            }
+//=======
+////            ObjectDetailView()
+//>>>>>>> Stashed changes
         }
         .sheet(isPresented: $presentCaptureView) {
             CapturePrimaryView {
