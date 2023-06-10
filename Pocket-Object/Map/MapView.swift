@@ -28,8 +28,6 @@ struct MapView: View {
     .mapScope(mapScope)
     .onAppear {
       locationDataManager.getCurrentLocation()
-      print("--> \(test.testModel.name)")
-      print("--> \(test.testModel.)")
     }
   }
 }
