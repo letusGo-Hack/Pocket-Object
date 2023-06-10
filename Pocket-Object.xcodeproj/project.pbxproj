@@ -16,6 +16,8 @@
 		3518F8AA2A341285007C4178 /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518F8A92A341285007C4178 /* CaptureManager.swift */; };
 		3518F8AD2A342DBF007C4178 /* GeoTrackKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3518F8AC2A342DBF007C4178 /* GeoTrackKit */; };
 		550D5E5B2A344B5F00D16C90 /* 3Dview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D5E5A2A344B5F00D16C90 /* 3Dview.swift */; };
+		550D5E5E2A34689000D16C90 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D5E5D2A34689000D16C90 /* ResultView.swift */; };
+		550D5E612A346A0A00D16C90 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D5E602A346A0A00D16C90 /* DirectoryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		3518F8A72A34125C007C4178 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		3518F8A92A341285007C4178 /* CaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureManager.swift; sourceTree = "<group>"; };
 		550D5E5A2A344B5F00D16C90 /* 3Dview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3Dview.swift; sourceTree = "<group>"; };
+		550D5E5D2A34689000D16C90 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		550D5E602A346A0A00D16C90 /* DirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,10 @@
 		2CAF00972A340E0B00823EE6 /* Pocket-Object */ = {
 			isa = PBXGroup;
 			children = (
+				550D5E632A346AAD00D16C90 /* CaptureView */,
+				550D5E5C2A34688700D16C90 /* ResultView */,
+				550D5E622A346A9B00D16C90 /* 3dView */,
+				550D5E5F2A3469F300D16C90 /* Common */,
 				2CAF00982A340E0B00823EE6 /* Pocket_ObjectApp.swift */,
 				2CAF009A2A340E0B00823EE6 /* ContentView.swift */,
 				3518F8A72A34125C007C4178 /* CameraView.swift */,
@@ -68,7 +76,6 @@
 				2CAF009C2A340E0D00823EE6 /* Assets.xcassets */,
 				2CAF00A12A340E0D00823EE6 /* Item.swift */,
 				2CAF009E2A340E0D00823EE6 /* Preview Content */,
-				550D5E5A2A344B5F00D16C90 /* 3Dview.swift */,
 			);
 			path = "Pocket-Object";
 			sourceTree = "<group>";
@@ -79,6 +86,37 @@
 				2CAF009F2A340E0D00823EE6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		550D5E5C2A34688700D16C90 /* ResultView */ = {
+			isa = PBXGroup;
+			children = (
+				550D5E5D2A34689000D16C90 /* ResultView.swift */,
+			);
+			path = ResultView;
+			sourceTree = "<group>";
+		};
+		550D5E5F2A3469F300D16C90 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				550D5E602A346A0A00D16C90 /* DirectoryManager.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		550D5E622A346A9B00D16C90 /* 3dView */ = {
+			isa = PBXGroup;
+			children = (
+				550D5E5A2A344B5F00D16C90 /* 3Dview.swift */,
+			);
+			path = 3dView;
+			sourceTree = "<group>";
+		};
+		550D5E632A346AAD00D16C90 /* CaptureView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CaptureView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +200,9 @@
 				2CAF00992A340E0B00823EE6 /* Pocket_ObjectApp.swift in Sources */,
 				3518F8A82A34125C007C4178 /* CameraView.swift in Sources */,
 				3518F8AA2A341285007C4178 /* CaptureManager.swift in Sources */,
+				550D5E5E2A34689000D16C90 /* ResultView.swift in Sources */,
 				550D5E5B2A344B5F00D16C90 /* 3Dview.swift in Sources */,
+				550D5E612A346A0A00D16C90 /* DirectoryManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +336,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pocket-Object/Preview Content\"";
-				DEVELOPMENT_TEAM = PHT5ZHW738;
+				DEVELOPMENT_TEAM = N7B3VPVQX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"let me use your damn camera\"";
@@ -326,7 +366,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pocket-Object/Preview Content\"";
-				DEVELOPMENT_TEAM = PHT5ZHW738;
+				DEVELOPMENT_TEAM = N7B3VPVQX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"let me use your damn camera\"";
